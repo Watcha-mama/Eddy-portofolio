@@ -3,67 +3,71 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Météo locale</title>
-    <link rel="stylesheet" href    async function getWeather(lat, lon) {
-            const apiKey = "9fcdde5cd2bbb79b5aed58525926a562"; // Remplace par ta vraie clé
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`;
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (response.ok) {
-                    const weather = data.weather[0];
-                    const temp = data.main.temp;
-                    const wind = data.wind.speed;
-                    const city = data.name;
-
-                    document.getElementById('weather').innerHTML = `
-                        <h2>Météo actuelle à {city}</h2>
-                        <p><strong>Condition : {weather.description}</strong></p>
-                        <p><strong>Température : {temp}°C</strong></p>
-                        <p><strong>Vent : {wind} m/s</strong></p>
-                        <img src="https://openweathermap.org/img/wn/${weatherpng
-                    `;
-                } else {
-                    document.getElementById('weather').innerHTML = `<p>Erreur : ${data.message}</p>`;
-                }
-            } catch (error) {
-                document.getElementById('weather').innerHTML = `<p>Impossible de récupérer la météo.</p>`;
-            }
+    <title>Météo en temps réel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            color: #333;
+            text-align: center;
+            padding: 20px;
         }
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        getWeather(lat, lon);
-                    },
-                    () => {
-                        document.getElementById('weather').innerHTML = `<p>La géolocalisation a échoué.</p>`;
-                    }
-                );
-            } else {
-                document.getElementById('weather').innerHTML = `<p>La géolocalisation n'est pas supportée par ce navigateur.</p>`;
-            }
+        .weather-box {
+            background-color: #ffffffcc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
         }
-
-        window.onload = getLocation;
-    </script>
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .icon {
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Météo locale en temps réel</h1>
-        </header>
-    <main>
-        <section id="weather">
-            <p>Chargement de la météo...</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Eddy KOYACPO</p>
-    </footer>
+    <h1>Météo en temps réel</h1>
+    <input type="text" id="cityInput" placeholder="Entrez une ville">
+    <button onclick="getWeather()">Obtenir la météo</button>
+    <div id="weather" class="weather-box"></div>
+
+    <script>
+        const apiKey = '9fcdde5cd2bbb79b5aed58525926a562'; // Remplacez par votre clé OpenWeatherMap
+
+        function getWeather() {
+            const city = document.getElementById('cityInput').value;
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`)
+                .then(response => response.json())
+                .then(data => {
+                    const iconCode = data.weather[0].icon;
+                    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+                    document.getElementById('weather').innerHTML = `
+                        <h2>${data.name}, ${data.sys.country}</h2>
+                        <img src="${iconUrl}" class="icon" alt="${data.weather[0].description}">
+                        <p><strong>Conditions :</strong> ${data.weather[0].description}</p>
+                        <p><strong>Température :</strong> ${data.main.temp} °C</p>
+                        <p><strong>Humidité :</strong> ${data.main.humidity}%</p>
+                        <p><strong>Vent :</strong> ${data.wind.speed} m/s</p>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById('weather').innerHTML = '<p>Ville non trouvée ou erreur de connexion.</p>';
+                });
+        }
+    </script>
 </body>
 </html>
