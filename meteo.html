@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Météo locale</title>
+    <link rel="stylesheet" href    async function getWeather(lat, lon) {
+            const apiKey = "9fcdde5cd2bbb79b5aed58525926a562"; // Remplace par ta vraie clé
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (response.ok) {
+                    const weather = data.weather[0];
+                    const temp = data.main.temp;
+                    const wind = data.wind.speed;
+                    const city = data.name;
+
+                    document.getElementById('weather').innerHTML = `
+                        <h2>Météo actuelle à {city}</h2>
+                        <p><strong>Condition : {weather.description}</strong></p>
+                        <p><strong>Température : {temp}°C</strong></p>
+                        <p><strong>Vent : {wind} m/s</strong></p>
+                        <img src="https://openweathermap.org/img/wn/${weatherpng
+                    `;
+                } else {
+                    document.getElementById('weather').innerHTML = `<p>Erreur : ${data.message}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('weather').innerHTML = `<p>Impossible de récupérer la météo.</p>`;
+            }
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        getWeather(lat, lon);
+                    },
+                    () => {
+                        document.getElementById('weather').innerHTML = `<p>La géolocalisation a échoué.</p>`;
+                    }
+                );
+            } else {
+                document.getElementById('weather').innerHTML = `<p>La géolocalisation n'est pas supportée par ce navigateur.</p>`;
+            }
+        }
+
+        window.onload = getLocation;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Météo locale en temps réel</h1>
+        </header>
+    <main>
+        <section id="weather">
+            <p>Chargement de la météo...</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Eddy KOYACPO</p>
+    </footer>
+</body>
+</html>
