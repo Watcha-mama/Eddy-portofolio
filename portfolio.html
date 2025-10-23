@@ -1,56 +1,123 @@
 
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<title>Portfolio - Eddy KOYACPO</title>
-<style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        nav { background-color: #333; padding: 10px; }
-        nav a { color: white; margin: 10px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 20px; }
-        .projet-ia { margin-bottom: 20px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Eddy KOYACPO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        nav {
+            background-color: #004d40;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffccbc;
+        }
+        section {
+            padding: 20px;
+            animation: slideUp 1s ease-in;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-300%); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-<nav>
-<a href="#projets-realises">Projets Réalisés</a>
-<a href="#perspectives-ia">Perspectives IA</a>
-<a href="#projets-ia">Projets IA</a>
-<a href="blog.html">Blog</a>
-</nav>
-<section id="projets-realises">
-<h2>Projets Réalisés</h2>
-<ul>
-<li>Application de gestion de robes de mariée en Python</li>
-<li>Installation de services réseau sous Linux et Windows Server (DNS, DHCP, Email, etc.)</li>
-<li>Téléphonie IP avec Asterisk et softphones (X-lite, Zoiper)</li>
-</ul>
-</section>
-<section id="perspectives-ia">
-<h2>Perspectives en Intelligence Artificielle</h2>
-<p>Spécialisation en Deep Learning (CNN, RNN, GRU, LSTM), traitement de données avec Python, Pandas, et MongoDB. Objectif : développer des solutions IA pour améliorer les programmes humanitaires.</p>
-</section>
-<section id="projets-ia">
-<h2>Projets en Intelligence Artificielle</h2>
-<div class="projet-ia">
-<h3>Système de reconnaissance d'images avec CNN</h3>
-<p>Développement d'un modèle de réseau de neurones convolutifs pour la classification d'images dans le cadre de projets humanitaires.</p>
-</div>
-<div class="projet-ia">
-<h3>Analyse prédictive des distributions alimentaires</h3>
-<p>Utilisation de RNN et LSTM pour prédire les besoins alimentaires dans les régions vulnérables en fonction des données historiques.</p>
-</div>
-<div class="projet-ia">
-<h3>Optimisation des transferts monétaires</h3>
-<p>Application de l'intelligence artificielle pour améliorer l'efficacité des transferts monétaires numériques dans les programmes de sécurité alimentaire.</p>
-</div>
-<div class="projet-ia">
-<h3>Détection d'anomalies dans les données de terrain</h3>
-<p>Implémentation de modèles GRU pour identifier les incohérences dans les rapports de terrain et améliorer la qualité des données.</p>
-</div>
-</section>
-<section id="projets-ia"><h2>Projets en Intelligence Artificielle</h2><div class="projet-ia"><img alt="Système de reconnaissance d'images avec CNN" src="cnn_project.jpg" width="300"/><h3>Système de reconnaissance d'images avec CNN</h3><p>Développement d'un modèle de réseau de neurones convolutifs pour classer des images médicales.</p></div><div class="projet-ia"><img alt="Analyse prédictive des distributions alimentaires" src="lstm_food_prediction.jpg" width="300"/><h3>Analyse prédictive des distributions alimentaires</h3><p>Utilisation de LSTM pour prédire les besoins alimentaires dans les zones humanitaires.</p></div><div class="projet-ia"><img alt="Chatbot intelligent pour l'assistance humanitaire" src="chatbot_humanitaire.jpg" width="300"/><h3>Chatbot intelligent pour l'assistance humanitaire</h3><p>Création d'un assistant virtuel basé sur le NLP pour répondre aux questions des bénéficiaires.</p></div></section></body>
+    <header>
+        <h1>Portfolio de Eddy KOYACPO</h1>
+    </header>
+    <nav>
+        <a href="#projets">Projets réalisés</a>
+        <a href="#ia">Perspectives IA</a>
+        <a href="#details">Projets IA détaillés</a>
+    </nav>
+    <section id="projets">
+        <h2>Projets réalisés</h2>
+        <ul>
+            <li>Application de gestion de robes de mariée en Python</li>
+            <li>Installation de services réseau : DNS, DHCP, Email, Voix</li>
+            <li>Téléphonie IP avec Asterisk et softphones</li>
+        </ul>
+    </section>
+    <section id="ia">
+        <h2>Perspectives en Intelligence Artificielle</h2>
+        <p>Spécialisation en Deep Learning, traitement de données, solutions intelligentes pour l'humanitaire.</p>
+    </section>
+    <section id="details">
+        <h2>Projets IA détaillés</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-item">
+                    <h3>Reconnaissance d'images médicales</h3>
+                    <p>Utilisation de CNN pour classifier des images médicales et assister au diagnostic.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Analyse prédictive alimentaire</h3>
+                    <p>Modèles LSTM pour prévoir les besoins humanitaires en fonction des données historiques.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Chatbot intelligent</h3>
+                    <p>Assistant virtuel pour répondre aux questions des bénéficiaires en temps réel.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Détection d'anomalies</h3>
+                    <p>Réseaux auto-encodeurs pour identifier des anomalies dans les données de distribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
