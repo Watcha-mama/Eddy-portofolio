@@ -1,26 +1,141 @@
 
 <!DOCTYPE html>
-<html lang='fr'>
+<html lang="fr">
 <head>
-    <meta charset='UTF-8'>
-    <title>Blog - Eddy KOYACPO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog IA - Eddy KOYACPO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        nav { background-color: #333; padding: 10px; }
-        nav a { color: white; margin: 10px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s, color 0.5s;
+        }
+        header {
+            background: linear-gradient(to right, #0077b6, #00b4d8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        nav {
+            background-color: #023e8a;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #90e0ef;
+        }
+        .container {
+            padding: 20px;
+        }
+        .article {
+            background: #f1f1f1;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: slideUp 1s ease-in-out;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        .carousel img {
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .carousel img:hover {
+            transform: scale(1.05);
+        }
+        .dark-mode {
+            background: #121212;
+            color: #f1f1f1;
+        }
+        footer {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes slideUp {
+            from {transform: translateY(20px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Blog IA - Eddy KOYACPO</h1>
+        <button onclick="toggleDarkMode()">Mode sombre / clair</button>
+    </header>
     <nav>
-        <a href='portfolio.html'>Portfolio</a>
-        <a href='blog.html'>Blog</a>
-        <a href='#contact'>Contact</a>
+        <a href="#articles">Articles</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#video">Vidéo</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <section>
-        <h1>Bienvenue sur mon Blog</h1>
-        <p>Ce blog est dédié à mes réflexions et analyses sur l'ingénierie des données, l'intelligence artificielle, et les innovations numériques. Restez connectés pour découvrir mes articles et projets en cours.</p>
-    </section>
+    <div class="container">
+        <section id="articles">
+            <h2>Articles récents</h2>
+            <div class="article">
+                <h3>Introduction à l'IA humanitaire</h3>
+                <p>Comment l'intelligence artificielle peut améliorer les programmes de transferts monétaires et la sécurité alimentaire.</p>
+            </div>
+            <div class="article">
+                <h3>Deep Learning pour la reconnaissance d'images</h3>
+                <p>Utilisation des CNN pour classer des images médicales dans des contextes à faibles ressources.</p>
+            </div>
+        </section>
+        <section id="galerie">
+            <h2>Galerie de projets</h2>
+            <div class="carousel">
+                <img src="https://via.placeholder.com/300x200?text=Projet+1" alt="Projet IA 1">
+                <img src="https://via.placeholder.com/300x200?text=Projet+2" alt="Projet IA 2">
+                <img src="https://via.placeholder.com/300x200?text=Projet+3" alt="Projet IA 3">
+            </div>
+        </section>
+        <section id="video">
+            <h2>Présentation vidéo</h2>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label>Nom :</label><br>
+                <input type="text" name="nom" required><br>
+                <label>Email :</label><br>
+                <input type="email" name="email" required><br>
+                <label>Message :</label><br>
+                <textarea name="message" rows="5" required></textarea><br>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Eddy KOYACPO - Tous droits réservés</p>
+    </footer>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
