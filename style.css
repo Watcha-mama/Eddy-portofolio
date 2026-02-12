@@ -1,74 +1,35 @@
-/* Style général */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+#skills {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
 }
 
-header {
-  background-color: #007BFF;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-nav {
-  background-color: #333;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-nav ul li a {
-  display: block;
-  padding: 15px 20px;
-  color: white;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  background-color: #555;
-}
-
-#menu-toggle {
-  display: none;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  #menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-  }
-
-  nav ul.active {
+.skills-container {
     display: flex;
-  }
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-section {
-  padding: 20px;
+.skill-group {
+    display: contents; /* Permet aux badges de se mélanger fluidement */
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
+.skill-group span {
+    background: rgba(56, 189, 248, 0.1); /* Fond bleu transparent */
+    color: var(--accent);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Effet au survol des badges */
+.skill-group span:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
 }
