@@ -1,108 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eddy KOYACPO - Ingénieur Réseaux & IA</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="s://unpkg.com/aos@2.3.1/dist/aos.css" reldy {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e3f2fd, #ffffff);
-    }
-    .navbar {
-      background-color: #0d6efd;
-    }
-    .navbar-nav .nav-link {
-      color: white;
-      transition: transform 0.3s ease;
-    }
-nav-link:hover {
-      transform: scale(1.1);
-      color: #ffc107;
-    }
-    .section-title {
-      color: #0d6efd;
-      margin-bottom: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Mon Portfolio | Projets & CV</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    #Eddy KOYACPO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><formationFormation</a></li>
-        <li class="nav-item">#experienceExpérience</a></li>
-        <li class="nav-item">#competencesCompétences</a></li>
-        <li class="nav-item"><iaPerspectives IA</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contactl>
+    <header>
+        <h1>Jean Dupont</h1>
+        <p>Développeur en formation</p>
+        <!-- Lien direct vers le CV -->
+        <a href="assets/mon-cv.pdf" class="btn" target="_blank">Télécharger mon CV (PDF)</a>
+    </header>
+<section id="skills">
+    <h2>Expertise Technique</h2>
+    <div class="skills-container">
+        <!-- Groupe Data Science -->
+        <div class="skill-group">
+            <span>Machine Learning</span>
+            <span>Deep Learning (CNN, LSTM)</span>
+            <span>Python (Pandas, Numpy)</span>
+            <span>NLP</span>
+        </div>
+        <!-- Groupe Bases de données -->
+        <div class="skill-group">
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Architecture Client/Serveur</span>
+        </div>
+        <!-- Groupe Programmation -->
+        <div class="skill-group">
+            <span>Langage C/C++</span>
+            <span>Java</span>
+            <span>PHP / JavaScript</span>
+        </div>
+        <!-- Groupe Systèmes & Réseaux -->
+        <div class="skill-group">
+            <span>Linux & Windows Server</span>
+            <span>Téléphonie IP (Asterisk)</span>
+            <span>Sécurité Informatique</span>
+        </div>
     </div>
-  </div>
-</nav>
-
-<header class="text-center py-5" data-aos="fade-down">
-  <h1 class="display-4">Ingénieur Réseaux & Systèmes - Passionné d'IA</h1>
-  <p class="lead">Basé à Bangui, avec une solide formation universitaire et une vision tournée vers l'intelligence artificielle.</p>
-</header>
-
-<section id="formation" class="container my-5" data-aos="fade-up">
-  <h2 class="section-title text-center">Formation Universitaire</h2>
-  <ul>
-    <li>🎓 Master Téléinformatique - ESMT & École Polytechnique de Dakar</li>
-    <li>🎓 Maîtrise en Mathématiques et Informatique - Université de Bangui</li>
-    <li>📚 Formations complémentaires : 3G/4G, CDMA, Sécurité Informatique, Gestion de projet</li>
-  </ul>
 </section>
+    <section id="projets">
+        <h2>Mes Projets</h2>
+        
+        <div class="projet-card">
+            <h3>Calculatrice en Langage C</h3>
+            <p>Algorithme de calcul complexe réalisé durant mon cursus.</p>
+            <a href="assets/rapport-projet-c.pdf" target="_blank">Consulter le rapport</a> | 
+            <a href="https://github.com" target="_blank">Voir le code</a>
+        </div>
+    </section>
+  <section id="contact">
+    <h2>Me Contacter</h2>
+    <div class="contact-wrapper">
+        <!-- Formulaire de contact -->
+        <form action="https://formspree.io" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Votre Nom" required>
+            <input type="email" name="_replyto" placeholder="Votre Email" required>
+            <textarea name="message" rows="5" placeholder="Votre Message" required></textarea>
+            <button type="submit" class="btn">Envoyer le message</button>
+        </form>
 
-<section id="experience" class="container my-5" data-aos="fade-up">
-  <h2 class="section-title text-center">Expérience Professionnelle</h2>
-  <ul>
-    <li>📌 Programme Assistant CBT - Programme Alimentaire Mondial (PAM)</li>
-    <li>📌 Assistant Universitaire - Université de Bangui (Programmation, Mathématiques)</li>
-    <li>📌 Chef de section Informatique - SDCI</li>
-  </ul>
-</section>
-
-<section id="competences" class="container my-5" data-aos="fade-up">
-  <h2 class="section-title text-center">Compétences Techniques</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <h5>Python & IA</h5>
-      <div class="progress mb-3"><div class="progress-bar bg-success" style="width: 90%;">90%</div></div>
-      <h5>Développement Web</h5>
-      <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 85%;">85%</div></div>
+        <!-- Liens directs & Infos -->
+        <div class="contact-info">
+            <div class="info-item">
+                <strong>Email :</strong>
+                <a href="mailto:watchakoyacpo@gmail.com">watchakoyacpo@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <strong>LinkedIn :</strong>
+                <a href="https://www.linkedin.com" target="_blank">Profil Professionnel</a>
+            </div>
+            <div class="info-item">
+                <strong>Localisation :</strong>
+                <span>Bangui, République Centrafricaine</span>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <h5>Data Engineering</h5>
-      <div class="progress mb-3"><div class="progress-bar bg-warning" style="width: 80%;">80%</div></div>
-      <h5>Automatisation RPA</h5>
-      <div class="progress mb-3"><div class="progress-bar bg-danger" style="width: 75%;">75%</div></div>
-    </div>
-  </div>
 </section>
-
-<section id="ia" class="container my-5" data-aos="fade-up">
-  <h2 class="section-title text-center">Perspectives en Intelligence Artificielle</h2>
-  <p>Je m'intéresse particulièrement à l'application de l'IA dans les domaines du traitement du langage naturel, de la vision par ordinateur et de l'automatisation des processus. Mon objectif est de contribuer à des projets innovants qui améliorent la vie quotidienne grâce à la technologie.</p>
-</section>
-
-<section id="contact" class="container my-5" data-aos="fade-up">
-  <h2 class="section-title text-center">Contact</h2>
-  <p>Email : mailto:eddy_watcha2006@yahoo.freddy_watcha2006@yahoo.fr</a></p>
-  <p>Téléphone : 70002020 / 72187544</p>
-  <p>LinkedIn : <a href="https://linkedin.com/in/jonas-koyacpo7/Profil LinkedIn</a></p>
-</section>
-
-<footer class="bg-primary text-white text-center py-3">
-  <p>&copy; 2025 Eddy KOYACPO - Tous droits réservés</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2strap.bundle.min.js
-https://unpkg.com/aos@2.3.1/dist/aos.js
-<script>AOS.init();</script>
 </body>
 </html>
+
+
