@@ -2,85 +2,101 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Portfolio | Projets & CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddy Jonas KOYACPO | Expert IA & Data</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Importation d'une police moderne -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Jean Dupont</h1>
-        <p>Développeur en formation</p>
-        <!-- Lien direct vers le CV -->
-        <a href="assets/mon-cv.pdf" class="btn" target="_blank">Télécharger mon CV (PDF)</a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">EJK.<span>IA</span></div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#experience">Parcours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="accueil" class="hero">
+        <div class="container">
+            <h1>Eddy Jonas KOYACPO</h1>
+            <p class="subtitle">Maître Ingénieur en Data Engineering & Intelligence Artificielle</p>
+            <p class="tagline">Expertise humanitaire (PAM) + Innovation technologique (Deep Learning)</p>
+            <a href="#projets" class="btn">Voir mes projets</a>
+        </div>
     </header>
-<section id="skills">
-    <h2>Expertise Technique</h2>
-    <div class="skills-container">
-        <!-- Groupe Data Science -->
-        <div class="skill-group">
-            <span>Machine Learning</span>
-            <span>Deep Learning (CNN, LSTM)</span>
-            <span>Python (Pandas, Numpy)</span>
-            <span>NLP</span>
-        </div>
-        <!-- Groupe Bases de données -->
-        <div class="skill-group">
-            <span>MySQL</span>
-            <span>MongoDB</span>
-            <span>Architecture Client/Serveur</span>
-        </div>
-        <!-- Groupe Programmation -->
-        <div class="skill-group">
-            <span>Langage C/C++</span>
-            <span>Java</span>
-            <span>PHP / JavaScript</span>
-        </div>
-        <!-- Groupe Systèmes & Réseaux -->
-        <div class="skill-group">
-            <span>Linux & Windows Server</span>
-            <span>Téléphonie IP (Asterisk)</span>
-            <span>Sécurité Informatique</span>
-        </div>
-    </div>
-</section>
-    <section id="projets">
-        <h2>Mes Projets</h2>
-        
-        <div class="projet-card">
-            <h3>Calculatrice en Langage C</h3>
-            <p>Algorithme de calcul complexe réalisé durant mon cursus.</p>
-            <a href="assets/rapport-projet-c.pdf" target="_blank">Consulter le rapport</a> | 
-            <a href="https://github.com" target="_blank">Voir le code</a>
+
+    <!-- Projets IA -->
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projets IA & Data</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Améliorer la productivité agricole grâce à l’IA</h3>
+                    <p>Créer une plateforme web/mobile accessible aux agriculteurs (multilingue : français et sango).</p>
+		    <a href="Mes_projets/Projet_IA_Agriculture.pdf">Documents de projets</a>
+                    <span class="tech">Python | Deep Learning</span>
+		</div>
+                <div class="project-card">
+                    <h3>Optimisation des flux financiers en RCA</h3>
+                    <p>Optimiser la prise de décision par l’analyse prédictive des flux financiers (recettes fiscales, transferts, paiements mobiles).</p>
+                    <span class="tech">Python | Deep Learning</span>
+                </div>
+                <div class="project-card">
+                    <h3>Création d’applications web pour les PME</h3>
+                    <p>Digitaliser les PME avec des outils simples de gestion (stocks, ventes, comptabilité).</p>
+		    <p>Accroître la visibilité des entreprises grâce à des sites vitrines et plateformes e-commerce</p>
+		    <p>Optimiser la prise de décision via l’IA (analyse des ventes, prévisions de la demande).</p>
+	            <p>Favoriser l’inclusion numérique avec des interfaces multilingues (français et sango).</p>
+                    <span class="tech">SQL | Data Engineering</span>
+                </div>
+		<div class="project-card">
+                    <h3>Santé infantile</h3>
+                    <p>Améliorer le diagnostic précoce des maladies graves (paludisme sévère, pneumonie, malnutrition aiguë, méningite).</p>
+		    <p>Faciliter la prise de décision médicale grâce à des outils d’aide au diagnostic basés sur l’IA.</p>
+                    <span class="tech">Python | Deep Learning</span>
+                </div>
+
+            </div>
         </div>
     </section>
-  <section id="contact">
-    <h2>Me Contacter</h2>
-    <div class="contact-wrapper">
-        <!-- Formulaire de contact -->
-        <form action="https://formspree.io" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Votre Nom" required>
-            <input type="email" name="_replyto" placeholder="Votre Email" required>
-            <textarea name="message" rows="5" placeholder="Votre Message" required></textarea>
-            <button type="submit" class="btn">Envoyer le message</button>
-        </form>
 
-        <!-- Liens directs & Infos -->
-        <div class="contact-info">
-            <div class="info-item">
-                <strong>Email :</strong>
-                <a href="mailto:watchakoyacpo@gmail.com">watchakoyacpo@gmail.com</a>
-            </div>
-            <div class="info-item">
-                <strong>LinkedIn :</strong>
-                <a href="https://www.linkedin.com" target="_blank">Profil Professionnel</a>
-            </div>
-            <div class="info-item">
-                <strong>Localisation :</strong>
-                <span>Bangui, République Centrafricaine</span>
+    <!-- Expérience Express -->
+    <section id="experience" class="exp">
+        <div class="container">
+            <h2 class="section-title">Expérience Clé</h2>
+            <div class="timeline">
+                <div class="item">
+                    <h4>2017 - 2025 | Programme Alimentaire Mondial (WFP)</h4>
+                    <p>Assistant de Programme CBT - Digitalisation et déploiement stratégique en RCA.</p>
+                </div>
+                <div class="item">
+                    <h4>2010 - 2017 | Université de Bangui</h4>
+                    <p>Assistant a l'universite de Bangui (Informatique, Telecommunications).</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Prêt à collaborer ?</h2>
+            <p>Basé à Bangui, République Centrafricaine</p>
+            <p>📧 watchakoyacpo@gmail.com</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/jonas-koyacpo-19b731237/">LinkedIn</a> | <a href="https://github.com/Watcha-mama">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2024 Eddy Jonas KOYACPO</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-
-
